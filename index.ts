@@ -1,4 +1,4 @@
-const ICON_PAUSE =      "./files/assets/icons/pause.svg";
+const ICON_PAUSE = "./files/assets/icons/pause.svg";
 
 //статус для отображения иконок (родная иконка или иконка паузы)
 enum StatusMusic {
