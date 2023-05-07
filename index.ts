@@ -116,7 +116,7 @@ class MusicPlayer {
 }
 
 const musicPlayer: MusicPlayer = new MusicPlayer();
-const  btnsMusic: HTMLCollectionOf<HTMLImageElement> | null = document.getElementsByClassName("btnMusic") as HTMLCollectionOf<HTMLImageElement> | null;
+const btnsMusic: HTMLCollectionOf<HTMLImageElement> | null = document.getElementsByClassName("btnMusic") as HTMLCollectionOf<HTMLImageElement> | null;
 const arrayBtnsMusic: BtnMusic[] | null = [].slice.call(btnsMusic).map((item: HTMLImageElement) => new BtnMusic(item!.id as BtnType, musicPlayer))
 
 
