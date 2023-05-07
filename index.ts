@@ -37,7 +37,7 @@ const SCHEMA_MEDIA: SchemaMap = {
 const DEFAULT_BTN_ID:   BtnType = BtnType.btnRain;
 const DEFAULT_BTN:      SchemaMedia = SCHEMA_MEDIA[DEFAULT_BTN_ID];
 
-const ICON_PAUSE=       "./files/assets/icons/pause.svg";
+const ICON_PAUSE =      "./files/assets/icons/pause.svg";
 
 class BtnMusic {
     #element:   HTMLImageElement;
@@ -46,8 +46,8 @@ class BtnMusic {
     #_music:    string;
     constructor(public id: BtnType, private currentMusicPlayer: MusicPlayer){
         this.#element = document.getElementById(id) as HTMLImageElement;
-        this.#_image = SCHEMA_MEDIA[id]?.image || DEFAULT_BTN?.image;
         this.#icon = SCHEMA_MEDIA[id]?.icon || DEFAULT_BTN?.icon;
+        this.#_image = SCHEMA_MEDIA[id]?.image || DEFAULT_BTN?.image;
         this.#_music = SCHEMA_MEDIA[id]?.music || DEFAULT_BTN?.music;
         const parentDivElement: HTMLDivElement = this.#element.parentNode! as HTMLDivElement;
         parentDivElement.style.backgroundImage = this.#_image;
@@ -68,21 +68,21 @@ class BtnMusic {
         }
     }
 
-    public get music(): string{
-        return this.#_music;
-    } 
     public get image(): string{
         return this.#_image;
+    } 
+    public get music(): string{
+        return this.#_music;
     } 
 }
 
 class MusicPlayer {
-    #_currentBtn: BtnMusic | null = null;
-    #audioPlayer: HTMLMediaElement;
-    #container: HTMLDivElement;
+    #_currentBtn:   BtnMusic | null = null;
+    #audioPlayer:   HTMLMediaElement;
+    #container:     HTMLDivElement;
     constructor(){
         this.#audioPlayer = document.getElementById("audioPlayer") as HTMLMediaElement;
-        this.#container = document.getElementById("container") as HTMLDivElement;
+        this.#container =   document.getElementById("container") as HTMLDivElement;
         const volume: HTMLInputElement = document.getElementById("volume-input") as HTMLInputElement;
         volume.addEventListener('input', (event: Event) => {
             this.#audioPlayer.volume = Number((event.target as HTMLInputElement).value) / 100;
@@ -97,13 +97,13 @@ class MusicPlayer {
             this.#_currentBtn = newBtn;
             this.#container.style.backgroundImage = this.#_currentBtn.image;
             this.#_currentBtn.setStatusMusic(StatusMusic.stPlay);
-            this.#audioPlayer!.src =this.#_currentBtn.music;
+            this.#audioPlayer!.src = this.#_currentBtn.music;
             if(this.#audioPlayer?.paused){
                 this.#audioPlayer.play();
             }
         }else{
-            this.#_currentBtn.setStatusMusic(StatusMusic.stPause);
             if(!this.#audioPlayer!.paused){
+                this.#_currentBtn.setStatusMusic(StatusMusic.stPause);
                 this.#audioPlayer!.pause();
             }else{
                 this.#_currentBtn.setStatusMusic(StatusMusic.stPlay);
