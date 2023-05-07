@@ -1,7 +1,6 @@
 enum StatusMusic {
     stPlay  = "stPlay",
     stPause = "stPause",
-    stWait  = "stWait",
 }
 
 enum BtnType {
@@ -21,23 +20,24 @@ type SchemaMap = {
 }
 
 const SCHEMA_MEDIA: SchemaMap = {
-    [BtnType.btnRain]: {    image: "url(/files/assets/rainy-bg.jpg)",
-                            icon:  "files/assets/icons/cloud-rain.svg",
-                            music: "files/assets/sounds/rain.mp3",
+    [BtnType.btnRain]: {    image: "url(./files/assets/rainy-bg.jpg)",
+                            icon:  "./files/assets/icons/cloud-rain.svg",
+                            music: "./files/assets/sounds/rain.mp3",
                         },
-    [BtnType.btnSun]: {     image: "url(/files/assets/summer-bg.jpg)",
-                            icon:  "files/assets/icons/sun.svg",
-                            music: "files/assets/sounds/summer.mp3",
+    [BtnType.btnSun]: {     image: "url(./files/assets/summer-bg.jpg)",
+                            icon:  "./files/assets/icons/sun.svg",
+                            music: "./files/assets/sounds/summer.mp3",
                         },
-    [BtnType.btnSnow]: {    image: "url(/files/assets/winter-bg.jpg)",
-                            icon:  "files/assets/icons/cloud-snow.svg",
-                            music: "files/assets/sounds/winter.mp3",
+    [BtnType.btnSnow]: {    image: "url(./files/assets/winter-bg.jpg)",
+                            icon:  "./files/assets/icons/cloud-snow.svg",
+                            music: "./files/assets/sounds/winter.mp3",
                         },
 }
 
 const DEFAULT_BTN_ID:   BtnType = BtnType.btnRain;
 const DEFAULT_BTN:      SchemaMedia = SCHEMA_MEDIA[DEFAULT_BTN_ID];
-const ICON_PAUSE=       "files/assets/icons/pause.svg";
+
+const ICON_PAUSE=       "./files/assets/icons/pause.svg";
 
 class BtnMusic {
     #element:   HTMLImageElement;
