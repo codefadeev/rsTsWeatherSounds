@@ -161,6 +161,8 @@ class MusicPlayer {
     }
 }
 
+//--------------------------START--------------------------//
+
 //1.создаём плеер
 const musicPlayer: MusicPlayer = new MusicPlayer();
 
