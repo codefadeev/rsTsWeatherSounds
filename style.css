@@ -1,0 +1,68 @@
+html {
+    display: block;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/files/assets/rainy-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    box-shadow: inset;
+    font-family: Roboto;
+    text-shadow: 1px 1px black;
+}
+
+.container-btn {
+    display: flex;
+    justify-content: space-around;
+    max-height: 30%;
+    flex-wrap: nowrap;
+    align-items: center;
+    grid-gap:00px;
+    margin: 0 10vw 0 10vw;
+}
+
+.btn-container {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    background-image: url(/files/assets/rainy-bg.jpg);
+    margin: 1rem;
+    overflow: clip;
+}
+
+.btnMusic {
+    width: calc(10vw / 2);
+    cursor: pointer;
+}
+
+.volume {
+    justify-content: center;
+    gap: 3rem;
+    display: flex;
+}
+
+.volume-input {
+    margin: 3em;
+}
+
+
+
