@@ -71,7 +71,8 @@ class BtnMusic {
         parentDivElement.style.backgroundImage = this.#_image;
         //на родительский div навешиваем слушатель клика
         parentDivElement.addEventListener('click', () => {
-            //если нажали по кнопке, то в плеере (который передали в конструктор), 
+            //если нажали по кнопке, то в плеере -
+            //который передали в конструктор "currentMusicPlayer: MusicPlayer"- 
             //будем указывать эту кнопку как активную 
             currentMusicPlayer.CurrentBtn = this as unknown as BtnMusic;
         }
@@ -94,13 +95,13 @@ class BtnMusic {
     public get image(): string{
         return this.#_image;
     } 
-    
+
     public get music(): string{
         return this.#_music;
     } 
 }
 
-//класс плеера, который регулирует воспроизведение
+//класс плеера, который управляет воспроизведением
 class MusicPlayer {
     //аудиоплеер
     #audioPlayer:   HTMLMediaElement;
@@ -123,7 +124,7 @@ class MusicPlayer {
         })
     }
 
-    //функция запоминает последнюю нажатую кнопку
+    //функция запоминает последнюю нажатую кнопку.
     //(вызывается из события нажатия кнопки BtnMusic,
     //аргументом передаётся сама нажатая кнопка)
     public set CurrentBtn(newBtn: BtnMusic){
