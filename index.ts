@@ -45,16 +45,13 @@ class BtnMusic {
     #_image:    string;
     #_music:    string;
     constructor(public id: BtnType, private currentMusicPlayer: MusicPlayer){
-        console.log(id);
         this.#element = document.getElementById(id) as HTMLImageElement;
         this.#_image = SCHEMA_MEDIA[id]?.image || DEFAULT_BTN?.image;
-        console.log(this.#_image);
         this.#icon = SCHEMA_MEDIA[id]?.icon || DEFAULT_BTN?.icon;
         this.#_music = SCHEMA_MEDIA[id]?.music || DEFAULT_BTN?.music;
         const parentDivElement: HTMLDivElement = this.#element.parentNode! as HTMLDivElement;
         parentDivElement.style.backgroundImage = this.#_image;
         parentDivElement.addEventListener('click', () => {
-            console.log('BtnMusic this.#element.onclick');
             currentMusicPlayer.CurrentBtn = this as unknown as BtnMusic;
         }
         )
@@ -107,10 +104,8 @@ class MusicPlayer {
         }else{
             this.#_currentBtn.setStatusMusic(StatusMusic.stPause);
             if(!this.#audioPlayer!.paused){
-                console.log('played');
                 this.#audioPlayer!.pause();
             }else{
-                console.log('paused');
                 this.#_currentBtn.setStatusMusic(StatusMusic.stPlay);
                 this.#audioPlayer!.play();
             }
